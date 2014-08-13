@@ -6,6 +6,10 @@ Prueba::Application.routes.draw do
     collection do 
       get 'new_department'
     end
+
+    member do 
+      get 'municipalities_from'
+    end
   end
 
 

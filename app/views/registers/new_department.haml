@@ -1,13 +1,13 @@
 %tr{ id: "land-#{ @id }"}
   %td
     .input.select.optional.register_lands_department
-      %select.select_department.select.optional{name: "register[lands_attributes][ @id ][department_id]", id: 'lands_department_#{ @id }'}
+      %select.select_department.select.optional{name: "register[lands_attributes][ @id ][department_id]", id: "lands_department_#{ @id }"}
         %option{value: ""}
         = options_from_collection_for_select @departments, :id, :name
 
   %td
     .input.select.optional.register_lands_municipality
-      %select.select_municipality.select.optional{name: "register[lands_attributes][ @id ][municipality_id]", id: 'lands_municipality_#{ @id }'}
+      %select.select_municipality.select.optional{name: "register[lands_attributes][ @id ][municipality_id]", id: "lands_municipality_#{ @id }"}
         %option{value: ""}
         = options_from_collection_for_select @municipalities, :id, :name
   %td

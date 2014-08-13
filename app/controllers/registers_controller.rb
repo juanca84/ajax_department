@@ -83,11 +83,20 @@ class RegistersController < ApplicationController
     end
   end
 
-  #metodo adicion nuevo departmento
+  #metodo para adicionar nuevo tr de lands
   def new_department 
     @id = DateTime.now.to_i
     @departments= Department.all
     @municipalities = Municipality.all
+    respond_to do |wants|
+      wants.html { render layout: false }
+    end
+  end
+
+  #metodo adicion nuevo departmento
+  def municipalities_from
+    department = Department.find_by_id params[:id]
+    @municipalities = department.try(:municipalities)
     respond_to do |wants|
       wants.html { render layout: false }
     end
