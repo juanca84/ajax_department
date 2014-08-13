@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(document).on('click','.add_department',function(){
+  $.ajax({
+      url: '/registers/new_department',
+      dataType: 'html'
+  }).success(function(data){
+  	console.log(data);
+	  $('#table_lands tbody tr:last').after(data);
+  })
+});

@@ -2,7 +2,11 @@ Prueba::Application.routes.draw do
 
 
 
-  resources :registers
+  resources :registers do
+    collection do 
+      get 'new_department'
+    end
+  end
 
 
   resources :municipalities

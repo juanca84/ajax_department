@@ -82,4 +82,14 @@ class RegistersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #metodo adicion nuevo departmento
+  def new_department 
+    @id = DateTime.now.to_i
+    @departments= Department.all
+    @municipalities = Municipality.all
+    respond_to do |wants|
+      wants.html { render layout: false }
+    end
+  end
 end

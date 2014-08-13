@@ -1,5 +1,5 @@
 .table
-  %table
+  %table#table_lands
     %thead
       %tr
         %th departamento
@@ -18,9 +18,4 @@
           %td
             = land.check_box :_destroy          
 
-  = link_to 'Add', '#'
-
-
-
-
-
+  = link_to 'Add', '#', class: 'add_department'
