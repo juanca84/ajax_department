@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @province.name
+%p
+  %b Department:
+  = @province.department
+
+= link_to 'Edit', edit_province_path(@province)
+\|
+= link_to 'Back', provinces_path

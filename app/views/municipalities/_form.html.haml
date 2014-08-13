@@ -1,0 +1,19 @@
+- index = 1
+= simple_form_for @municipality do |f|
+  - if @municipality.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@municipality.errors.count, "error")} prohibited this municipality from being saved:"
+      %ul
+        - @municipality.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :province    
+    = f.input_field :province_id, as: :select, collection: Province.all, class: 'select optional form-control department_lands department', id: "department_lands_#{ index }"
+  .actions
+    = f.submit 'Save'    
+
+  - index = 1

@@ -1,0 +1,21 @@
+%h1 Listing municipalities
+
+%table
+  %tr
+    %th Name
+    %th Province
+    %th
+    %th
+    %th
+
+  - @municipalities.each do |municipality|
+    %tr
+      %td= municipality.name
+      %td= municipality.province
+      %td= link_to 'Show', municipality
+      %td= link_to 'Edit', edit_municipality_path(municipality)
+      %td= link_to 'Destroy', municipality, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Municipality', new_municipality_path

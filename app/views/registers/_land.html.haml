@@ -1,0 +1,26 @@
+.table
+  %table
+    %thead
+      %tr
+        %th departamento
+        %th municipio
+        %th unit
+    %tbody
+      %tr
+      = f.simple_fields_for :lands do |land|
+        %tr{ id: "land-#{ land.object.id }" }      
+          %td
+            = land.association :department, label: false, input_html: { id: "department_lands_#{ land.object.id }" }
+          %td
+            = land.association :municipality, label: false, input_html: { id: "municipality_lands_#{ land.object.id }" }, collection: land.object.try(:department).try(:municipalities)
+          %td
+            = land.input_field :unit
+          %td
+            = land.check_box :_destroy          
+
+  = link_to 'Add', '#'
+
+
+
+
+
